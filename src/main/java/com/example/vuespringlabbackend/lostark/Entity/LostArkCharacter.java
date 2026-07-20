@@ -1,4 +1,4 @@
-package com.example.vuespringlabbackend.lostark;
+package com.example.vuespringlabbackend.lostark.Entity;
 
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
@@ -6,6 +6,7 @@ import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
+import org.springframework.data.jpa.repository.JpaRepository;
 
 @Entity
 @Getter
@@ -26,5 +27,8 @@ public class LostArkCharacter {
         this.characterName = characterName;
         this.jobName = jobName;
         this.itemLevel = itemLevel;
+    }
+
+    public static interface LostArkCharacterRepository extends JpaRepository<LostArkCharacter, Long> {
     }
 }
