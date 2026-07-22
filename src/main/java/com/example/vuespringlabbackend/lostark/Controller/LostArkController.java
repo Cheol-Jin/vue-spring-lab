@@ -2,6 +2,7 @@ package com.example.vuespringlabbackend.lostark.Controller;
 
 import com.example.vuespringlabbackend.lostark.Dto.LostArkCharacterCreateRequest;
 import com.example.vuespringlabbackend.lostark.Dto.LostArkCharacterResponse;
+import com.example.vuespringlabbackend.lostark.Dto.LostArkCharacterUpdateRequest;
 import com.example.vuespringlabbackend.lostark.Service.LostArkCharacterService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.web.bind.annotation.*;
@@ -33,5 +34,23 @@ public class LostArkController {
     @GetMapping("/characters")
     public List<LostArkCharacterResponse> getCharacters() {
         return characterService.getCharacters();
+    }
+
+    @GetMapping("/characters/{id}")
+    public LostArkCharacterResponse getCharacter(@PathVariable Long id) {
+        return characterService.getCharacter(id);
+    }
+
+    @PutMapping("/characters/{id}")
+    public LostArkCharacterResponse updateCharacter(
+            @PathVariable Long id,
+            @RequestBody LostArkCharacterUpdateRequest request
+    ) {
+        return characterService.updateCharacter(id, request);
+    }
+
+    @DeleteMapping("/characters/{id}")
+    public void deleteCharacter(@PathVariable Long id) {
+        characterService.deleteCharacter(id);
     }
 }

@@ -29,6 +29,12 @@ public class LostArkCharacter {
         this.itemLevel = itemLevel;
     }
 
+    public void update(String characterName, String jobName, Integer itemLevel) {
+        this.characterName = characterName;
+        this.jobName = jobName;
+        this.itemLevel = itemLevel;
+    }
+
     public static interface LostArkCharacterRepository extends JpaRepository<LostArkCharacter, Long> {
     }
 }
