@@ -20,21 +20,21 @@ public class LostArkCharacterService {
     @Transactional
     public LostArkCharacterResponse createCharacter(LostArkCharacterCreateRequest request) {
         LostArkCharacter character = new LostArkCharacter(
-                request.getCharacterName(),
-                request.getJobName(),
-                request.getItemLevel()
+                request.characterName(),
+                request.jobName(),
+                request.itemLevel()
         );
 
         LostArkCharacter savedCharacter = characterRepository.save(character);
 
-        return new LostArkCharacterResponse(savedCharacter);
+        return LostArkCharacterResponse.from(savedCharacter);
     }
 
     @Transactional(readOnly = true)
     public List<LostArkCharacterResponse> getCharacters() {
         return characterRepository.findAll()
                 .stream()
-                .map(LostArkCharacterResponse::new)
+                .map(LostArkCharacterResponse::from)
                 .toList();
     }
 
@@ -43,7 +43,7 @@ public class LostArkCharacterService {
         LostArkCharacter character = characterRepository.findById(id)
                 .orElseThrow(() -> new IllegalArgumentException("캐릭터를 찾을 수 없습니다. id=" + id));
 
-        return new LostArkCharacterResponse(character);
+        return LostArkCharacterResponse.from(character);
     }
 
     @Transactional
@@ -52,12 +52,12 @@ public class LostArkCharacterService {
                 .orElseThrow(() -> new IllegalArgumentException("캐릭터를 찾을 수 없습니다. id=" + id));
 
         character.update(
-                request.getCharacterName(),
-                request.getJobName(),
-                request.getItemLevel()
+                request.characterName(),
+                request.jobName(),
+                request.itemLevel()
         );
 
-        return new LostArkCharacterResponse(character);
+        return LostArkCharacterResponse.from(character);
     }
 
     @Transactional

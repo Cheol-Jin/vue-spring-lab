@@ -1,20 +1,20 @@
 package com.example.vuespringlabbackend.lostark.Dto;
 
 import com.example.vuespringlabbackend.lostark.Entity.LostArkCharacter;
-import lombok.Getter;
 
-@Getter
-public class LostArkCharacterResponse {
+public record LostArkCharacterResponse(
+        Long id,
+        String characterName,
+        String jobName,
+        Integer itemLevel
+) {
 
-    private final Long id;
-    private final String characterName;
-    private final String jobName;
-    private final Integer itemLevel;
-
-    public LostArkCharacterResponse(LostArkCharacter character) {
-        this.id = character.getId();
-        this.characterName = character.getCharacterName();
-        this.jobName = character.getJobName();
-        this.itemLevel = character.getItemLevel();
+    public static LostArkCharacterResponse from(LostArkCharacter character) {
+        return new LostArkCharacterResponse(
+                character.getId(),
+                character.getCharacterName(),
+                character.getJobName(),
+                character.getItemLevel()
+        );
     }
 }
