@@ -1,9 +1,12 @@
 package com.example.vuespringlabbackend.lostark.controller;
 
+import com.example.vuespringlabbackend.lostark.api.LostArkOpenApiClient;
 import com.example.vuespringlabbackend.lostark.dto.LostArkCharacterCreateRequest;
 import com.example.vuespringlabbackend.lostark.dto.LostArkCharacterResponse;
 import com.example.vuespringlabbackend.lostark.dto.LostArkCharacterUpdateRequest;
 import com.example.vuespringlabbackend.lostark.service.LostArkCharacterService;
+import com.example.vuespringlabbackend.lostark.api.LostArkOpenApiClient;
+import com.example.vuespringlabbackend.lostark.dto.LostArkProfileResponse;
 import lombok.RequiredArgsConstructor;
 import org.springframework.web.bind.annotation.*;
 
@@ -16,6 +19,8 @@ import java.util.Map;
 public class LostArkController {
 
     private final LostArkCharacterService characterService;
+
+    private final LostArkOpenApiClient lostArkOpenApiClient;
 
     @GetMapping("/status")
     public Map<String, String> status() {
@@ -52,5 +57,10 @@ public class LostArkController {
     @DeleteMapping("/characters/{id}")
     public void deleteCharacter(@PathVariable Long id) {
         characterService.deleteCharacter(id);
+    }
+
+    @GetMapping("/official/characters/{characterName}/profile")
+    public LostArkProfileResponse getOfficialCharacterProfile(@PathVariable String characterName) {
+        return lostArkOpenApiClient.getCharacterProfile(characterName);
     }
 }
