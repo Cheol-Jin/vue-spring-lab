@@ -1,4 +1,4 @@
-package com.example.vuespringlabbackend.lostark.Entity;
+package com.example.vuespringlabbackend.lostark.entity;
 
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;

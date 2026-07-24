@@ -1,4 +1,4 @@
-package com.example.vuespringlabbackend.lostark.Dto;
+package com.example.vuespringlabbackend.lostark.dto;
 
 public record LostArkCharacterCreateRequest(
         String characterName,

@@ -1,6 +1,6 @@
-package com.example.vuespringlabbackend.lostark.Dto;
+package com.example.vuespringlabbackend.lostark.dto;
 
-import com.example.vuespringlabbackend.lostark.Entity.LostArkCharacter;
+import com.example.vuespringlabbackend.lostark.entity.LostArkCharacter;
 
 public record LostArkCharacterResponse(
         Long id,

@@ -1,10 +1,10 @@
-package com.example.vuespringlabbackend.lostark.Service;
+package com.example.vuespringlabbackend.lostark.service;
 
-import com.example.vuespringlabbackend.lostark.Dto.LostArkCharacterCreateRequest;
-import com.example.vuespringlabbackend.lostark.Dto.LostArkCharacterResponse;
-import com.example.vuespringlabbackend.lostark.Dto.LostArkCharacterUpdateRequest;
-import com.example.vuespringlabbackend.lostark.Entity.LostArkCharacter;
-import com.example.vuespringlabbackend.lostark.Repository.LostArkCharacterRepository;
+import com.example.vuespringlabbackend.lostark.dto.LostArkCharacterCreateRequest;
+import com.example.vuespringlabbackend.lostark.dto.LostArkCharacterResponse;
+import com.example.vuespringlabbackend.lostark.dto.LostArkCharacterUpdateRequest;
+import com.example.vuespringlabbackend.lostark.entity.LostArkCharacter;
+import com.example.vuespringlabbackend.lostark.repository.LostArkCharacterRepository;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;

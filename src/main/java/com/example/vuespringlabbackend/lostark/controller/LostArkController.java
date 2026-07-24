@@ -1,9 +1,9 @@
-package com.example.vuespringlabbackend.lostark.Controller;
+package com.example.vuespringlabbackend.lostark.controller;
 
-import com.example.vuespringlabbackend.lostark.Dto.LostArkCharacterCreateRequest;
-import com.example.vuespringlabbackend.lostark.Dto.LostArkCharacterResponse;
-import com.example.vuespringlabbackend.lostark.Dto.LostArkCharacterUpdateRequest;
-import com.example.vuespringlabbackend.lostark.Service.LostArkCharacterService;
+import com.example.vuespringlabbackend.lostark.dto.LostArkCharacterCreateRequest;
+import com.example.vuespringlabbackend.lostark.dto.LostArkCharacterResponse;
+import com.example.vuespringlabbackend.lostark.dto.LostArkCharacterUpdateRequest;
+import com.example.vuespringlabbackend.lostark.service.LostArkCharacterService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.web.bind.annotation.*;
 
